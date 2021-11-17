@@ -4,6 +4,12 @@ require 'sinatra/contrib/all'
 require 'pony'
 require 'sqlite3'
 
+configure do
+        @dbase = SQLite3::Database.new 'public/customers.db' 
+        @dbase.execute "create table if not exists 'customers' ('id' integer primary key autoincrement, 'Name' varchar, 'ArDate' varchar, 'Phone' integer, 'Barber' varchar, 'Color' varchar)"
+
+end
+
 get '/' do
   erb "<p>Hello Epta</p>"
 end
@@ -37,11 +43,10 @@ post '/visit' do
       if @error != ''
             erb :visit
       else
-        dbase = SQLite3::Database.new 'public/customers.db' 
-       # dbase.execute "create table 'customers' ('id' integer primary key autoincrement, 'Name' varchar, 'ArDate' varchar, 'Phone' integer, 'Barber' varchar, 'Color' varchar)"
-        dbase.execute "insert into customers (Name, ArDate, Phone, Barber, Color) values ('#{@customer}', '#{@date}', '#{@phone}', '#{@barber}', '#{@color}')"
+          @dbase = SQLite3::Database.new 'public/customers.db' 
+          @dbase.execute "insert into customers (Name, ArDate, Phone, Barber, Color) values ('#{@customer}', '#{@date}', '#{@phone}', '#{@barber}', '#{@color}')"
 
-       dbase.close
+          @dbase.close
        
        erb "Your data are: #{@customer} | #{@date} | #{@phone} | #{@barber} | #{@color}\n"
       end 

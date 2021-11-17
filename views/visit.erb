@@ -14,9 +14,9 @@
 
         <label for="barber"> Choose your barber</label>
         <select name="barber">
-          <option>White</option>
-          <option>Pinkman</option>
-          <option>Fring</option>
+          <option <%= @barber == 'White' ? 'selected' : ''%>>White</option>
+          <option <%= @barber == 'Pinkman' ? 'selected' : ''%> >Pinkman</option>
+          <option <%= @barber == 'Fring' ? 'selected' : ''%> >Fring</option>
         </select>
         <br>
         <div>
