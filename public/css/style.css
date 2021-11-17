@@ -1,0 +1,233 @@
+
+body {
+	font-family: 'Open Sans';
+	font-size: 15px
+}
+
+h1 {font-size: 22px;}
+h2 {font-size: 20px;}
+h3 {font-size: 16px;}
+
+.bold-text {font-weight: bold; }
+.red-text {color: red;}
+.purple-text {color: purple;}
+.shadow {
+	background-color: yellow;
+	color: red;
+	font-size: 2.5em;
+	font-weight: bold;
+	text-shadow: 2px 2px 1px #C0C0C0;
+}
+.shadow1 {
+	background-color: yellow;
+	color: red;
+	font-size: 2.5em;
+	font-weight: bold;
+	text-shadow: 2px 2px  #C0C0C0;
+}
+
+	
+#top-ad {
+	background-color: yellow;
+	color: red;
+	font-size: 2em;
+}
+.royal_blue {color: rgb(65,205,225);
+	letter-spacing: 1px;
+	font-size: 3em;
+	font-style: italic;
+	background-color: black;
+}
+.greystar {
+	color: rgb(255,0, 255);
+	letter-spacing: 2px;
+	font-size:1.2em;
+	font-style: roman;
+}
+.larger-spacing {letter-spacing: 2px;}
+#inner-header {
+	background-color: black;
+	color: yellow;
+	font-size: 18px;
+}
+a:link {color:red; }
+a:visited {color:purple;}
+a:active {color:black;}
+a:hover {color: green;}
+article h2 {font-size: 16px;
+	font-weight:bold;
+	color:green;
+}
+article p:first-child {font-weight: bold;}
+article p:nth-child(3) {color: grey}
+article p:last-child {color: cyan; font-size: 30px;}
+article::first-line {font-style:italic;}
+h3::first-letter {font-size: 45px; font-style: roman}
+h2::selection {
+	background-color: black;
+        color: red;
+	font-size: 50px;
+}
+/*p::before {
+	content: "NOTE: ";
+	font-weight: bold;
+	color: red;
+}
+p::after {
+	content: "There is AFTER";
+	font-style: italic;
+	background-color: black;
+	color: yellow;
+	}*/
+.relative-position {
+	position: relative;
+	left: 20px;
+}
+
+.fixed {
+	position: fixed;
+	top: 55px;
+	right: 0;
+	width: 500px;
+	content: "REALLY Fixed PIZDOTA";
+	font-style: italic;
+	font-size: 2em;
+	background-color: rgb(200, 200, 200);
+	color: orange;
+}
+	
+div.the-parent 
+{
+	position: relative;
+	background-color: #CCCCCC;
+	width: 400px;
+	height: 200px;
+	border: 1px solid black;
+}
+div.the-child {
+	position: absolute;
+	background-color: #FFF;
+	top: 80px;
+	right: 0;
+	width: 200px;
+	height: 100px;
+	border: 1px solid black;
+}
+
+.sidebar {
+	float: right;
+	height: 100px;
+	width: 200px;
+	padding: 5px;
+	border: 2px solid black;
+}
+.main-text {border: 1px solid #333333;
+	clear: right;
+}
+
+.carter {
+	border: 1px solid #000;
+	padding: 5px;
+	overflow: auto;
+}
+.carter::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+#carter-pic {float: right;}
+.box {
+	float: left;
+	width: 33.33%;
+	padding: 50px;
+	border: 1px solid #000000;
+}
+.grid::after {
+	content:"";
+	clear: both;
+	display: table;
+}
+.box, .grid, .grid::after {box-sizing: border-box;}
+.inline-paragraph {
+	display: inline;
+}
+.block-paragraph {display: block;}
+.inline-text {display: inline-block;}
+.main-nav {
+	font-family: 'Open Sans',verdana, sans-serif;
+	font-size: 2rem;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #222222;
+}
+.main-nav li {
+	float: left;
+	}
+.main-nav li a {
+	display: block;
+	color: #EEEEEE;
+	text-align: center;
+	padding: 10px 12px;
+	text-decoration: none;
+}
+.flex-container {
+	display: flex ;
+	flex-wrap: wrap;
+	/* flex-direction: column;*/
+	background-color: #CCCCCC;
+}
+.flex-container > div {
+	background-color: #ffffff;
+	margin: 10px;
+	padding: 20px;
+	font-family: italic;
+	font-size: 30px;
+}
+blockquote {border-left: 3px solid black;}
+q{background-color: #FFFF33;}
+cite {
+	font-size: 80%;
+	color:gray;
+}				
+table {border: 1px solid blue;}
+th {
+	background-color: darkblue;
+	color: white;
+	font-weight: bold;
+}
+td {padding: 5px;}
+tr:nth-child(even) {background-color:lightgray;}
+.center-cell {text-align: center;}
+.subject {font-size:3em;}
+.lubel {
+	background-color: darkgrey;
+	font-family= 'Open Sans';
+}
+::placeholder {
+	color: darkgrey;
+	font-style:italic;
+}
+* {
+	box-sizing:border-box;
+}
+.button {
+	border:1px;
+	background-color: darkblue;
+	color:#fff;
+	border-radius: 8px;
+	font-family: inherit;
+	font-size: 2em;
+	padding: 15 15 15 15;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.18);
+	min-width: 10ch;
+	min-height: 44px;
+
+}
+	
+
