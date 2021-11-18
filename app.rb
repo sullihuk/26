@@ -44,7 +44,7 @@ post '/visit' do
             erb :visit
       else
           @dbase = SQLite3::Database.new 'public/customers.db' 
-          @dbase.execute "insert into customers (Name, ArDate, Phone, Barber, Color) values ('#{@customer}', '#{@date}', '#{@phone}', '#{@barber}', '#{@color}')"
+          @dbase.execute "insert into customers (Name, ArDate, Phone, Barber, Color) values (?,?,?,?,?)", ['#{@customer}', '#{@date}', '#{@phone}', '#{@barber}', '#{@color}')]
 
           @dbase.close
        
