@@ -4,8 +4,13 @@ require 'sinatra/contrib/all'
 require 'pony'
 require 'sqlite3'
 
+def dbexec 
+  @dbase = SQLite3::Database.new 'public/customers.db' 
+  @dbase.results_as_hash = true
+end
+
 configure do
-        @dbase = SQLite3::Database.new 'public/customers.db' 
+  dbexec
         @dbase.execute "create table if not exists 'customers' ('id' integer primary key autoincrement, 'Name' varchar, 'ArDate' varchar, 'Phone' integer, 'Barber' varchar, 'Color' varchar)"
 
 end
@@ -43,7 +48,7 @@ post '/visit' do
       if @error != ''
             erb :visit
       else
-          @dbase = SQLite3::Database.new 'public/customers.db' 
+        dbexec
           @dbase.execute 'insert into customers (Name, ArDate, Phone, Barber, Color) values (?,?,?,?,?)', [@customer, @date, @phone, @barber, @color]
 
           @dbase.close
@@ -85,11 +90,13 @@ post '/admen' do
   @parol = params[:parol]
 
   if @lohin == 'admin' && @parol == 'admin'
-
-  f = File.open 'public/customers.txt', 'r'
-  @listok = f.read
-  f.close
+    dbexec
+    @dbase.execute 'select * from customers' do |row|
+    @listok = print row 
+    end    
   else
     @irror = 'Access denied'
   end
 end
+
+
