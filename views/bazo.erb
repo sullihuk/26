@@ -1,0 +1,33 @@
+<h2> Base </h2>
+
+<table class="?">
+  <thead> 
+    <tr>
+      <th> Num. </th>
+      <th> Name </th>
+      <th> Phone </th>
+      <th> Arrivals Date</th>
+      <th> Barber</th>
+      <th> Color </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @listok.each do |row| %>
+      <tr>
+        <td><%= row['id']%></td>
+        <td><%= row['Name']%></td>
+        <td><%= row['ArDate']%></td>
+        <td><%= row['Phone']%></td>
+        <td><%= row['Barber']%></td>
+        <td style="background-color: <%= row['Color']%>"<%= row['Color']%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+

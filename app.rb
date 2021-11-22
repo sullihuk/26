@@ -13,6 +13,7 @@ configure do
   dbexec
         @dbase.execute "create table if not exists 'customers' ('id' integer primary key autoincrement, 'Name' varchar, 'ArDate' varchar, 'Phone' integer, 'Barber' varchar, 'Color' varchar)"
 
+        @dbase.execute "create table if not exists 'barbers' ('id' integer primary key autoincrement, 'Name' varchar, 'TWork' varchar)"
 end
 
 get '/' do
@@ -91,12 +92,15 @@ post '/admen' do
 
   if @lohin == 'admin' && @parol == 'admin'
     dbexec
-    @dbase.execute 'select * from customers' do |row|
-    @listok = print row 
-    end    
+     @listok = @dbase.execute 'select * from customers' 
+    erb :bazo
   else
     @irror = 'Access denied'
+    erb :admen
   end
 end
 
+get '/admen/showusers' do 
+erb :bazo
+end
 
