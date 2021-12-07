@@ -101,6 +101,6 @@ post '/admen' do
 end
 
 get '/admen/showusers' do 
-erb :bazo
+    erb :bazo
 end
 
